@@ -7,22 +7,20 @@ import InputForm from "./components/Form";
 import ToDoList from "./components/ToDoList";
 
 const App = () => {
-  const [list, setList] = useState([
-    {content: "Cook food", complete: false},
-    {content: "Clean House", complete: false}
-  ]);
+  const [list, setList] = useState(["Cook food", "Clean House"]);
 
-  // const addHandler = () => {
-  //   let storedList = [...list];
-  //   storedList.push(nextItem);
-  //   listInput = "";
-  //   setList(storedList);
-  // };
+ 
+
+const addTask = (inputValue) => {
+  let taskList = [...list];
+  taskList.push(inputValue);
+  setList(taskList);
+}
 
   return (
     <div className="App">
       <Header />
-      <InputForm />
+      <InputForm addTask={addTask}/>
       <div className="listCard">
         <ul>
           <ToDoList list={list} />

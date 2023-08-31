@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-const InputForm = () => {
+const InputForm = ({ addTask }) => {
+  const [inputValue, setInputValue] = useState("");
+  const handleChange = (e) => {
+    setInputValue(e.currentTarget.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addTask(inputValue);
+    setInputValue("");
+  };
+
   return (
-    <div className='inputForm'>
-      <form>
+    <div className="inputForm">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
+          value={inputValue}
+          onChange={handleChange}
           className="listInput"
-          placeholder="Add item here"
+          placeholder="Enter task here ..."
         ></input>
         <button type="submit">Add</button>
       </form>
