@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+// components
+import Header from "./components/Header";
+import InputForm from "./components/Form";
+import ToDoList from "./components/ToDoList";
+
+const App = () => {
+  const [list, setList] = useState([
+    {content: "Cook food", complete: false},
+    {content: "Clean House", complete: false}
+  ]);
+
+  // const addHandler = () => {
+  //   let storedList = [...list];
+  //   storedList.push(nextItem);
+  //   listInput = "";
+  //   setList(storedList);
+  // };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <InputForm />
+      <div className="listCard">
+        <ul>
+          <ToDoList list={list} />
+        </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
