@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-const ToDoList = ({list}) => {
-    return(
-        list.map((item, index) => {
-            return (
-              <li key={index} className="listItem">
-                {item}
-              </li>
-            );
-          })
-    )
-} 
+const ToDoList = (props) => {
+
+  const [complete, setComplete] = useState(false);  
+
+    return (
+      <div className="listItem">
+        <li className={`listItem-${complete}`}>{props.item}</li>
+        <button onClick={() => props.removeTask(props.index)}>X</button>
+        <button onClick={() => setComplete(!complete)}>{complete ? "Undo" : "Done"}</button>
+      </div>
+    );
+  };
 
 export default ToDoList;

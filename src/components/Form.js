@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 const InputForm = ({ addTask }) => {
   const [inputValue, setInputValue] = useState("");
+
   const handleChange = (e) => {
     setInputValue(e.currentTarget.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(inputValue);
@@ -21,7 +23,9 @@ const InputForm = ({ addTask }) => {
           className="listInput"
           placeholder="Enter task here ..."
         ></input>
-        <button type="submit">Add</button>
+        <button className="AddButton" type="submit">
+          Add
+        </button>
       </form>
     </div>
   );

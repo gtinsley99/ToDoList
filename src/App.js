@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // components
 import Header from "./components/Header";
@@ -7,8 +7,14 @@ import InputForm from "./components/Form";
 import ToDoList from "./components/ToDoList";
 
 const App = () => {
-  const [list, setList] = useState(["Cook food", "Clean House"]);
 
+  const [list, setList] = useState([]);
+
+  const removeTask = (index) => {
+    let taskList = [...list];
+    taskList.splice(index, 1);
+    setList(taskList);
+  }
  
 
 const addTask = (inputValue) => {
@@ -20,10 +26,12 @@ const addTask = (inputValue) => {
   return (
     <div className="App">
       <Header />
-      <InputForm addTask={addTask}/>
+      <InputForm addTask={addTask} />
       <div className="listCard">
         <ul>
-          <ToDoList list={list} />
+        {list.map((list, index) => {
+          return <ToDoList key={index} removeTask={removeTask} item={list} />;
+          })}
         </ul>
       </div>
     </div>
