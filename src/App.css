@@ -1,11 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Orbitron:wght@400;500&family=Roboto&display=swap');
+
+*{
+  font-family: 'Caveat', cursive;
+}
+
+body{
+  background-image: url("./images/t1.jpg");
+  background-size: 100%;
+
+}
+
 .App {
+  position: relative;
   text-align: center;
   width: 1000px;
-  height: 1000px;
-  background-color: yellow;
-  border: 3px solid black;
-  font-size: 25px;
+  height: 100%;
+  min-height: 910px;
+  font-size: 35px;
 }
+
+h1{
+  font-size: 35px;
+  padding-top: 38px;
+  text-decoration: underline;
+}
+
+.App::before {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  content: '';
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255,0,0,0.6);
+}
+
+.pattern {
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 39px, teal 40px);
+}
+
+button{
+  transition: 0.5s;
+  border-radius: 20%;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: rgb(153, 153, 153);
+}
+
 
 body{
   background-color: brown;
@@ -15,26 +59,46 @@ body{
 
 input{
   width: 350px;
-  height: 50px;
+  height: 30px;
+  background: none;
+  border: 2px dotted black;
   font-size: 25px;
-  margin-right: 20px;
+  margin-top: 15px;
 }
 
-button{
+.inputForm{
+  display: inline-flex
+}
+
+.setButtons{
+  display: flex;
+  align-items: center;
   position: relative;
-  top: -10px;
-  width:50px;
-  height:30px;
-  margin: 30px;
+  top: -15px;
+  font-size: 25px;
+  margin: 0px 20px;
+  height: 38px;
+  padding: 5px 10px;
+  background: none;
 }
 
 .AddButton{
-  position: static;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  position: relative;
+  top: 15px;
   width:100px;
-  height:50px;
-  font-size:25px;
-  margin: auto;
+  height:35px;
+  padding: 10px;
+  font-size:30px;
+  font-weight: bold;
+  margin-left: 50px;
+  border: 2px black solid;
+  background: none;
 }
+
+.AddButton
 
 .listCard{
   display: flex;
@@ -45,7 +109,20 @@ button{
 }
 
 li{
-  margin-bottom: 30px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: 2px;
+  margin: 0px 50px 40px 150px;
+  height: 40px;
+}
+
+ul{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0px;
+  max-width: 100%;
 }
 
 .listItem{

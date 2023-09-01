@@ -14,8 +14,8 @@ const InputForm = ({ addTask }) => {
   };
 
   return (
-    <div className="inputForm">
-      <form onSubmit={handleSubmit}>
+    <div>
+      <form className="inputForm" onSubmit={handleSubmit}>
         <input
           type="text"
           value={inputValue}

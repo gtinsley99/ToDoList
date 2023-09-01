@@ -7,8 +7,8 @@ const ToDoList = (props) => {
     return (
       <div className="listItem">
         <li className={`listItem-${complete}`}>{props.item}</li>
-        <button onClick={() => props.removeTask(props.index)}>X</button>
-        <button onClick={() => setComplete(!complete)}>{complete ? "Undo" : "Done"}</button>
+        <button className="setButtons" onClick={() => props.removeTask(props.index)}>Remove</button>
+        <button className="setButtons" onClick={() => setComplete(!complete)}>{complete ? "Undo" : "Completed"}</button>
       </div>
     );
   };
