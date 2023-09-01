@@ -30,7 +30,7 @@ const addTask = (inputValue) => {
       <div className="listCard">
         <ul>
         {list.map((list, index) => {
-          return <ToDoList key={index} removeTask={removeTask} item={list} />;
+          return <ToDoList key={index} removeTask={() => removeTask(index)} item={list} />;
           })}
         </ul>
       </div>
