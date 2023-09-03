@@ -9,6 +9,7 @@ const ToDoList = (props) => {
         <li className={`listItem-${complete}`}>{props.item}</li>
         <button className="setButtons" onClick={() => props.removeTask(props.index)}>Remove</button>
         <button className="setButtons" onClick={() => setComplete(!complete)}>{complete ? "Undo" : "Completed"}</button>
+        <button onClick={() => props.archiveTask(props.index)} className="setButtons">Archive</button>
       </div>
     );
   };
