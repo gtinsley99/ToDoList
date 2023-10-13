@@ -9,7 +9,9 @@ const InputForm = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(inputValue !== ""){
     addTask(inputValue);
+    }
     setInputValue("");
   };
 
